@@ -1,6 +1,7 @@
 <div class='col-xs-4'>
   <p>Game: {{game.id}}</p>
-  <button class='btn btn-default btn-sm' (click)='stopInterval()'>Stop</button>
+  <button *ngIf='!isCounting()' class='btn btn-default btn-sm' (click)='continueInterval()'>Continue</button>
+  <button *ngIf='isCounting()' class='btn btn-default btn-sm' (click)='stopInterval()'>Stop</button>
   <ng-content></ng-content>
 </div>
 <div class='col-xs-8'>
