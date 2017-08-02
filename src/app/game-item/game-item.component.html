@@ -1,0 +1,11 @@
+<div class='col-xs-4'>
+  <p>Game: {{game.id}}</p>
+  <button class='btn btn-default btn-sm' (click)='stopInterval()'>Stop</button>
+  <ng-content></ng-content>
+</div>
+<div class='col-xs-8'>
+  <div *ngFor='let item of game.data' style='inline-block'>
+    <app-even *ngIf='!isOdd(item)' [num]='item'></app-even>
+    <app-odd *ngIf='isOdd(item)' [num]='item'></app-odd>
+  </div>
+</div>
